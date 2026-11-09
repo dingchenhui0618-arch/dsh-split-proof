@@ -1,0 +1,20 @@
+node_modules/
+*.log
+
+# 本机凭据一律不入库
+.env
+.env.*
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+
+# 本机跑 CLI 时随手生成的报告（报告应当由用户决定放在哪里）
+/report.html
+/report.json
+/tmp/
+*.tmp
+
+# 截图脚本的中间产物：PNG 入库，预览页由 scripts/preview-panel.mjs 重新生成
+/docs/panel-preview.html

@@ -1,0 +1,11 @@
+# 规则集样例：classical 行为，每行是一条不带策略的规则。
+# 策略由引用它的 RULE-SET,domestic,DIRECT 给出。
+payload:
+  - DOMAIN-SUFFIX,bilibili.com
+  - DOMAIN-SUFFIX,zhihu.com
+  - DOMAIN-SUFFIX,jd.com
+  - DOMAIN-SUFFIX,weibo.com
+  - DOMAIN-SUFFIX,163.com
+  - DOMAIN-SUFFIX,taobao.com
+  - DOMAIN-SUFFIX,qq.com
+  - DOMAIN-SUFFIX,baidu.com

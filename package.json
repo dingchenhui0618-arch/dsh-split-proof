@@ -1,0 +1,66 @@
+{
+  "name": "dsh-split-proof",
+  "version": "0.1.0",
+  "engines": { "dsh": ">=0.2.1-rc.2 <0.3.0" },
+  "description": "Split-rule acceptance proof for DeepSeek Harness: read a Clash/Mihomo profile and a suite of expectations, then report expected vs actual per domain with the matched rule — read-only, offline, no device configuration is written.",
+  "type": "module",
+  "main": "lib/index.js",
+  "bin": { "split-proof": "bin/split-proof.mjs" },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "bin",
+    "fixtures",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "prepack": "node scripts/build.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ],
+      "platform": "web"
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "clash",
+    "mihomo",
+    "proxy",
+    "rule-set",
+    "split-routing",
+    "verification"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dingchenhui0618-arch/dsh-split-proof.git"
+  },
+  "homepage": "https://github.com/dingchenhui0618-arch/dsh-split-proof#readme",
+  "bugs": {
+    "url": "https://github.com/dingchenhui0618-arch/dsh-split-proof/issues"
+  },
+  "license": "MIT"
+}

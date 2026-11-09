@@ -1,0 +1,784 @@
+{
+  "kind": "split-proof/report",
+  "version": 1,
+  "createdAt": "2026-11-08T23:40:00.000Z",
+  "readOnly": {
+    "network": false,
+    "wroteDeviceConfig": false
+  },
+  "suite": {
+    "name": "家里 Wi-Fi · 国内不变、国外分流",
+    "note": "期望由这份文件声明，不是插件推断。国内站点期望直连，国外站点期望进代理组，广告域名期望拦截。",
+    "path": "fixtures/domestic-foreign.json",
+    "caseCount": 23
+  },
+  "config": {
+    "path": "fixtures/home-wifi-before.yaml",
+    "sha256": "0c68ec0f363b1955f3f86ef0af0983bfaa90441b5ec6069f548ee868624fbf57",
+    "mode": "rule",
+    "ruleCount": 9,
+    "providerCount": 2,
+    "groupCount": 4,
+    "proxyCount": 2,
+    "warnings": []
+  },
+  "providers": [
+    {
+      "name": "domestic",
+      "type": "file",
+      "behavior": "classical",
+      "status": "loaded",
+      "path": "fixtures/rulesets/domestic.yaml",
+      "count": 8,
+      "cached": false
+    },
+    {
+      "name": "ads",
+      "type": "file",
+      "behavior": "domain",
+      "status": "loaded",
+      "path": "fixtures/rulesets/ads.yaml",
+      "count": 4,
+      "cached": false
+    }
+  ],
+  "cases": [
+    {
+      "domain": "www.taobao.com",
+      "category": "国内",
+      "expect": {
+        "kind": "direct",
+        "raw": "direct"
+      },
+      "expectRaw": "direct",
+      "expectKind": "direct",
+      "note": "国内电商",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "direct",
+        "policy": "DIRECT"
+      },
+      "matched": {
+        "index": 4,
+        "raw": "RULE-SET,domestic,DIRECT",
+        "type": "RULE-SET",
+        "policy": "DIRECT"
+      },
+      "blockedBy": null,
+      "reason": "命中第 5 条「RULE-SET,domestic,DIRECT」→ DIRECT"
+    },
+    {
+      "domain": "www.bilibili.com",
+      "category": "国内",
+      "expect": {
+        "kind": "direct",
+        "raw": "direct"
+      },
+      "expectRaw": "direct",
+      "expectKind": "direct",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "direct",
+        "policy": "DIRECT"
+      },
+      "matched": {
+        "index": 4,
+        "raw": "RULE-SET,domestic,DIRECT",
+        "type": "RULE-SET",
+        "policy": "DIRECT"
+      },
+      "blockedBy": null,
+      "reason": "命中第 5 条「RULE-SET,domestic,DIRECT」→ DIRECT"
+    },
+    {
+      "domain": "www.zhihu.com",
+      "category": "国内",
+      "expect": {
+        "kind": "direct",
+        "raw": "direct"
+      },
+      "expectRaw": "direct",
+      "expectKind": "direct",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "direct",
+        "policy": "DIRECT"
+      },
+      "matched": {
+        "index": 4,
+        "raw": "RULE-SET,domestic,DIRECT",
+        "type": "RULE-SET",
+        "policy": "DIRECT"
+      },
+      "blockedBy": null,
+      "reason": "命中第 5 条「RULE-SET,domestic,DIRECT」→ DIRECT"
+    },
+    {
+      "domain": "item.jd.com",
+      "category": "国内",
+      "expect": {
+        "kind": "direct",
+        "raw": "direct"
+      },
+      "expectRaw": "direct",
+      "expectKind": "direct",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "direct",
+        "policy": "DIRECT"
+      },
+      "matched": {
+        "index": 4,
+        "raw": "RULE-SET,domestic,DIRECT",
+        "type": "RULE-SET",
+        "policy": "DIRECT"
+      },
+      "blockedBy": null,
+      "reason": "命中第 5 条「RULE-SET,domestic,DIRECT」→ DIRECT"
+    },
+    {
+      "domain": "weibo.com",
+      "category": "国内",
+      "expect": {
+        "kind": "direct",
+        "raw": "direct"
+      },
+      "expectRaw": "direct",
+      "expectKind": "direct",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "direct",
+        "policy": "DIRECT"
+      },
+      "matched": {
+        "index": 4,
+        "raw": "RULE-SET,domestic,DIRECT",
+        "type": "RULE-SET",
+        "policy": "DIRECT"
+      },
+      "blockedBy": null,
+      "reason": "命中第 5 条「RULE-SET,domestic,DIRECT」→ DIRECT"
+    },
+    {
+      "domain": "m.api.weibo.com",
+      "category": "国内",
+      "expect": {
+        "kind": "direct",
+        "raw": "direct"
+      },
+      "expectRaw": "direct",
+      "expectKind": "direct",
+      "note": "补充规则误伤的子域",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "direct",
+        "policy": "DIRECT"
+      },
+      "matched": {
+        "index": 4,
+        "raw": "RULE-SET,domestic,DIRECT",
+        "type": "RULE-SET",
+        "policy": "DIRECT"
+      },
+      "blockedBy": null,
+      "reason": "命中第 5 条「RULE-SET,domestic,DIRECT」→ DIRECT"
+    },
+    {
+      "domain": "www.163.com",
+      "category": "国内",
+      "expect": {
+        "kind": "direct",
+        "raw": "direct"
+      },
+      "expectRaw": "direct",
+      "expectKind": "direct",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "direct",
+        "policy": "DIRECT"
+      },
+      "matched": {
+        "index": 4,
+        "raw": "RULE-SET,domestic,DIRECT",
+        "type": "RULE-SET",
+        "policy": "DIRECT"
+      },
+      "blockedBy": null,
+      "reason": "命中第 5 条「RULE-SET,domestic,DIRECT」→ DIRECT"
+    },
+    {
+      "domain": "www.baidu.com",
+      "category": "国内",
+      "expect": {
+        "kind": "direct",
+        "raw": "direct"
+      },
+      "expectRaw": "direct",
+      "expectKind": "direct",
+      "note": "宽泛规则排在规则集之前",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "direct",
+        "policy": "DIRECT"
+      },
+      "matched": {
+        "index": 4,
+        "raw": "RULE-SET,domestic,DIRECT",
+        "type": "RULE-SET",
+        "policy": "DIRECT"
+      },
+      "blockedBy": null,
+      "reason": "命中第 5 条「RULE-SET,domestic,DIRECT」→ DIRECT"
+    },
+    {
+      "domain": "www.qq.com",
+      "category": "国内",
+      "expect": {
+        "kind": "direct",
+        "raw": "direct"
+      },
+      "expectRaw": "direct",
+      "expectKind": "direct",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "direct",
+        "policy": "DIRECT"
+      },
+      "matched": {
+        "index": 4,
+        "raw": "RULE-SET,domestic,DIRECT",
+        "type": "RULE-SET",
+        "policy": "DIRECT"
+      },
+      "blockedBy": null,
+      "reason": "命中第 5 条「RULE-SET,domestic,DIRECT」→ DIRECT"
+    },
+    {
+      "domain": "www.youtube.com",
+      "category": "国外",
+      "expect": {
+        "kind": "proxy",
+        "raw": "proxy"
+      },
+      "expectRaw": "proxy",
+      "expectKind": "proxy",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "proxy",
+        "policy": "流媒体",
+        "entity": "group",
+        "groupType": "select",
+        "selectionKnown": false,
+        "note": "目标是代理组「流媒体」，组里当前选中哪个节点由手机运行时决定，配置里看不到"
+      },
+      "matched": {
+        "index": 2,
+        "raw": "DOMAIN-SUFFIX,youtube.com,流媒体",
+        "type": "DOMAIN-SUFFIX",
+        "policy": "流媒体"
+      },
+      "blockedBy": null,
+      "reason": "命中第 3 条「DOMAIN-SUFFIX,youtube.com,流媒体」→ 流媒体"
+    },
+    {
+      "domain": "m.youtube.com",
+      "category": "国外",
+      "expect": {
+        "kind": "proxy",
+        "raw": "proxy"
+      },
+      "expectRaw": "proxy",
+      "expectKind": "proxy",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "proxy",
+        "policy": "流媒体",
+        "entity": "group",
+        "groupType": "select",
+        "selectionKnown": false,
+        "note": "目标是代理组「流媒体」，组里当前选中哪个节点由手机运行时决定，配置里看不到"
+      },
+      "matched": {
+        "index": 2,
+        "raw": "DOMAIN-SUFFIX,youtube.com,流媒体",
+        "type": "DOMAIN-SUFFIX",
+        "policy": "流媒体"
+      },
+      "blockedBy": null,
+      "reason": "命中第 3 条「DOMAIN-SUFFIX,youtube.com,流媒体」→ 流媒体"
+    },
+    {
+      "domain": "www.google.com",
+      "category": "国外",
+      "expect": {
+        "kind": "proxy",
+        "raw": "proxy"
+      },
+      "expectRaw": "proxy",
+      "expectKind": "proxy",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "proxy",
+        "policy": "节点选择",
+        "entity": "group",
+        "groupType": "select",
+        "selectionKnown": false,
+        "note": "目标是代理组「节点选择」，组里当前选中哪个节点由手机运行时决定，配置里看不到"
+      },
+      "matched": {
+        "index": 3,
+        "raw": "DOMAIN-KEYWORD,google,节点选择",
+        "type": "DOMAIN-KEYWORD",
+        "policy": "节点选择"
+      },
+      "blockedBy": null,
+      "reason": "命中第 4 条「DOMAIN-KEYWORD,google,节点选择」→ 节点选择"
+    },
+    {
+      "domain": "mail.google.com",
+      "category": "国外",
+      "expect": {
+        "kind": "proxy",
+        "raw": "proxy"
+      },
+      "expectRaw": "proxy",
+      "expectKind": "proxy",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "proxy",
+        "policy": "节点选择",
+        "entity": "group",
+        "groupType": "select",
+        "selectionKnown": false,
+        "note": "目标是代理组「节点选择」，组里当前选中哪个节点由手机运行时决定，配置里看不到"
+      },
+      "matched": {
+        "index": 3,
+        "raw": "DOMAIN-KEYWORD,google,节点选择",
+        "type": "DOMAIN-KEYWORD",
+        "policy": "节点选择"
+      },
+      "blockedBy": null,
+      "reason": "命中第 4 条「DOMAIN-KEYWORD,google,节点选择」→ 节点选择"
+    },
+    {
+      "domain": "api.github.com",
+      "category": "国外",
+      "expect": {
+        "kind": "proxy",
+        "raw": "proxy"
+      },
+      "expectRaw": "proxy",
+      "expectKind": "proxy",
+      "note": "有精确 DOMAIN 规则",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "proxy",
+        "policy": "节点选择",
+        "entity": "group",
+        "groupType": "select",
+        "selectionKnown": false,
+        "note": "目标是代理组「节点选择」，组里当前选中哪个节点由手机运行时决定，配置里看不到"
+      },
+      "matched": {
+        "index": 0,
+        "raw": "DOMAIN,api.github.com,节点选择",
+        "type": "DOMAIN",
+        "policy": "节点选择"
+      },
+      "blockedBy": null,
+      "reason": "命中第 1 条「DOMAIN,api.github.com,节点选择」→ 节点选择"
+    },
+    {
+      "domain": "github.com",
+      "category": "国外",
+      "expect": {
+        "kind": "proxy",
+        "raw": "proxy"
+      },
+      "expectRaw": "proxy",
+      "expectKind": "proxy",
+      "note": "配置里是直连，期望是代理：故意留下的分歧",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "fail",
+      "actual": {
+        "kind": "direct",
+        "policy": "DIRECT"
+      },
+      "matched": {
+        "index": 5,
+        "raw": "DOMAIN-SUFFIX,github.com,DIRECT",
+        "type": "DOMAIN-SUFFIX",
+        "policy": "DIRECT"
+      },
+      "blockedBy": null,
+      "reason": "期望走代理组，实际是DIRECT（第 6 条：DOMAIN-SUFFIX,github.com,DIRECT）"
+    },
+    {
+      "domain": "www.wikipedia.org",
+      "category": "国外",
+      "expect": {
+        "kind": "proxy",
+        "raw": "proxy"
+      },
+      "expectRaw": "proxy",
+      "expectKind": "proxy",
+      "note": "没有域名规则覆盖，落在 GEOIP 上",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "indeterminate",
+      "actual": null,
+      "matched": null,
+      "blockedBy": {
+        "index": 7,
+        "raw": "GEOIP,CN,DIRECT",
+        "code": "geoip-database",
+        "reason": "GEOIP,CN 需要 IP 地理位置库；本插件不内置、也不联网查询"
+      },
+      "reason": "第 8 条「GEOIP,CN,DIRECT」无法离线判定：GEOIP,CN 需要 IP 地理位置库；本插件不内置、也不联网查询"
+    },
+    {
+      "domain": "ads.doubleclick.net",
+      "category": "拦截",
+      "expect": {
+        "kind": "block",
+        "raw": "block"
+      },
+      "expectRaw": "block",
+      "expectKind": "block",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "block",
+        "policy": "广告拦截"
+      },
+      "matched": {
+        "index": 1,
+        "raw": "RULE-SET,ads,广告拦截",
+        "type": "RULE-SET",
+        "policy": "广告拦截"
+      },
+      "blockedBy": null,
+      "reason": "命中第 2 条「RULE-SET,ads,广告拦截」→ 广告拦截"
+    },
+    {
+      "domain": "pagead2.googlesyndication.com",
+      "category": "拦截",
+      "expect": {
+        "kind": "block",
+        "raw": "block"
+      },
+      "expectRaw": "block",
+      "expectKind": "block",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "block",
+        "policy": "广告拦截"
+      },
+      "matched": {
+        "index": 1,
+        "raw": "RULE-SET,ads,广告拦截",
+        "type": "RULE-SET",
+        "policy": "广告拦截"
+      },
+      "blockedBy": null,
+      "reason": "命中第 2 条「RULE-SET,ads,广告拦截」→ 广告拦截"
+    },
+    {
+      "domain": "adservice.google.com",
+      "category": "拦截",
+      "expect": {
+        "kind": "block",
+        "raw": "block"
+      },
+      "expectRaw": "block",
+      "expectKind": "block",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "block",
+        "policy": "广告拦截"
+      },
+      "matched": {
+        "index": 1,
+        "raw": "RULE-SET,ads,广告拦截",
+        "type": "RULE-SET",
+        "policy": "广告拦截"
+      },
+      "blockedBy": null,
+      "reason": "命中第 2 条「RULE-SET,ads,广告拦截」→ 广告拦截"
+    },
+    {
+      "domain": "router.lan",
+      "category": "局域网",
+      "expect": {
+        "kind": "direct",
+        "raw": "direct"
+      },
+      "expectRaw": "direct",
+      "expectKind": "direct",
+      "target": {
+        "ip": "192.168.1.1",
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "direct",
+        "policy": "DIRECT"
+      },
+      "matched": {
+        "index": 6,
+        "raw": "IP-CIDR,192.168.0.0/16,DIRECT,no-resolve",
+        "type": "IP-CIDR",
+        "policy": "DIRECT"
+      },
+      "blockedBy": null,
+      "reason": "命中第 7 条「IP-CIDR,192.168.0.0/16,DIRECT,no-resolve」→ DIRECT"
+    },
+    {
+      "domain": "printer.lan",
+      "category": "局域网",
+      "expect": {
+        "kind": "direct",
+        "raw": "direct"
+      },
+      "expectRaw": "direct",
+      "expectKind": "direct",
+      "target": {
+        "ip": "192.168.1.20",
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "pass",
+      "actual": {
+        "kind": "direct",
+        "policy": "DIRECT"
+      },
+      "matched": {
+        "index": 6,
+        "raw": "IP-CIDR,192.168.0.0/16,DIRECT,no-resolve",
+        "type": "IP-CIDR",
+        "policy": "DIRECT"
+      },
+      "blockedBy": null,
+      "reason": "命中第 7 条「IP-CIDR,192.168.0.0/16,DIRECT,no-resolve」→ DIRECT"
+    },
+    {
+      "domain": "www.example.org",
+      "category": "国外",
+      "expect": {
+        "kind": "proxy",
+        "raw": "proxy"
+      },
+      "expectRaw": "proxy",
+      "expectKind": "proxy",
+      "note": "只有 GEOIP 能兜住，离线判不了",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "indeterminate",
+      "actual": null,
+      "matched": null,
+      "blockedBy": {
+        "index": 7,
+        "raw": "GEOIP,CN,DIRECT",
+        "code": "geoip-database",
+        "reason": "GEOIP,CN 需要 IP 地理位置库；本插件不内置、也不联网查询"
+      },
+      "reason": "第 8 条「GEOIP,CN,DIRECT」无法离线判定：GEOIP,CN 需要 IP 地理位置库；本插件不内置、也不联网查询"
+    },
+    {
+      "domain": "news.ycombinator.com",
+      "category": "国外",
+      "expect": {
+        "kind": "proxy",
+        "raw": "proxy"
+      },
+      "expectRaw": "proxy",
+      "expectKind": "proxy",
+      "note": "同上",
+      "target": {
+        "ip": null,
+        "sourceIp": null,
+        "port": null,
+        "network": null
+      },
+      "verdict": "indeterminate",
+      "actual": null,
+      "matched": null,
+      "blockedBy": {
+        "index": 7,
+        "raw": "GEOIP,CN,DIRECT",
+        "code": "geoip-database",
+        "reason": "GEOIP,CN 需要 IP 地理位置库；本插件不内置、也不联网查询"
+      },
+      "reason": "第 8 条「GEOIP,CN,DIRECT」无法离线判定：GEOIP,CN 需要 IP 地理位置库；本插件不内置、也不联网查询"
+    }
+  ],
+  "summary": {
+    "total": 23,
+    "pass": 19,
+    "fail": 1,
+    "indeterminate": 3,
+    "invalid": 0,
+    "byCategory": {
+      "国内": {
+        "total": 9,
+        "pass": 9,
+        "fail": 0,
+        "indeterminate": 0,
+        "invalid": 0
+      },
+      "国外": {
+        "total": 9,
+        "pass": 5,
+        "fail": 1,
+        "indeterminate": 3,
+        "invalid": 0
+      },
+      "拦截": {
+        "total": 3,
+        "pass": 3,
+        "fail": 0,
+        "indeterminate": 0,
+        "invalid": 0
+      },
+      "局域网": {
+        "total": 2,
+        "pass": 2,
+        "fail": 0,
+        "indeterminate": 0,
+        "invalid": 0
+      }
+    },
+    "passRate": 0.8260869565217391,
+    "decidable": 20
+  },
+  "limits": [
+    {
+      "code": "geoip-database",
+      "count": 3,
+      "reason": "GEOIP,CN 需要 IP 地理位置库；本插件不内置、也不联网查询"
+    }
+  ],
+  "notes": [
+    "目标是代理组「流媒体」，组里当前选中哪个节点由手机运行时决定，配置里看不到",
+    "目标是代理组「节点选择」，组里当前选中哪个节点由手机运行时决定，配置里看不到"
+  ],
+  "baseline": null
+}

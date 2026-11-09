@@ -1,0 +1,6 @@
+# 规则集样例：domain 行为，每行是一个域名后缀。
+payload:
+  - '+.doubleclick.net'
+  - '+.googlesyndication.com'
+  - '+.googleadservices.com'
+  - '+.adservice.google.com'

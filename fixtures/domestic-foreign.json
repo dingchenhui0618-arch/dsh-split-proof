@@ -1,0 +1,35 @@
+{
+  "name": "家里 Wi-Fi · 国内不变、国外分流",
+  "note": "期望由这份文件声明，不是插件推断。国内站点期望直连，国外站点期望进代理组，广告域名期望拦截。",
+  "directGroups": ["DIRECT", "直连"],
+  "rejectGroups": ["REJECT", "广告拦截"],
+  "cases": [
+    { "domain": "www.taobao.com", "expect": "direct", "group": "国内", "note": "国内电商" },
+    { "domain": "www.bilibili.com", "expect": "direct", "group": "国内" },
+    { "domain": "www.zhihu.com", "expect": "direct", "group": "国内" },
+    { "domain": "item.jd.com", "expect": "direct", "group": "国内" },
+    { "domain": "weibo.com", "expect": "direct", "group": "国内" },
+    { "domain": "m.api.weibo.com", "expect": "direct", "group": "国内", "note": "补充规则误伤的子域" },
+    { "domain": "www.163.com", "expect": "direct", "group": "国内" },
+    { "domain": "www.baidu.com", "expect": "direct", "group": "国内", "note": "宽泛规则排在规则集之前" },
+    { "domain": "www.qq.com", "expect": "direct", "group": "国内" },
+
+    { "domain": "www.youtube.com", "expect": "proxy", "group": "国外" },
+    { "domain": "m.youtube.com", "expect": "proxy", "group": "国外" },
+    { "domain": "www.google.com", "expect": "proxy", "group": "国外" },
+    { "domain": "mail.google.com", "expect": "proxy", "group": "国外" },
+    { "domain": "api.github.com", "expect": "proxy", "group": "国外", "note": "有精确 DOMAIN 规则" },
+    { "domain": "github.com", "expect": "proxy", "group": "国外", "note": "配置里是直连，期望是代理：故意留下的分歧" },
+    { "domain": "www.wikipedia.org", "expect": "proxy", "group": "国外", "note": "没有域名规则覆盖，落在 GEOIP 上" },
+
+    { "domain": "ads.doubleclick.net", "expect": "block", "group": "拦截" },
+    { "domain": "pagead2.googlesyndication.com", "expect": "block", "group": "拦截" },
+    { "domain": "adservice.google.com", "expect": "block", "group": "拦截" },
+
+    { "domain": "router.lan", "expect": "direct", "group": "局域网", "ip": "192.168.1.1" },
+    { "domain": "printer.lan", "expect": "direct", "group": "局域网", "ip": "192.168.1.20" },
+
+    { "domain": "www.example.org", "expect": "proxy", "group": "国外", "note": "只有 GEOIP 能兜住，离线判不了" },
+    { "domain": "news.ycombinator.com", "expect": "proxy", "group": "国外", "note": "同上" }
+  ]
+}
